@@ -18,8 +18,14 @@
         <div class="list-col">
           <span>dynamic</span>
           <ul class="list">
-            <li>1</li>
+            <li v-for="item in dataForDynamic">
+              <span v-for="test in createDynamic(item)">
+                {{ test.name }}
+                <el-input placeholder="Please input" v-model="test.name"></el-input>
+              </span>
+            </li>
           </ul>
+          <el-button @click="addDynamic" type="primary">Add dynamic item</el-button>
         </div>
 
       </div>
