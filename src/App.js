@@ -1,10 +1,15 @@
 import Vue from 'vue';
 import ElementUI from 'element-ui';
 
+import Analytics from './components/analytics.vue'
+
 Vue.use(ElementUI);
 
 export default {
     name: 'app',
+    components: {
+      analytics: Analytics,
+  },
     data () {
       return {
         dataForDynamic: [[{id: 'a1'}, {id: 'a222'}], {id: 'a2'}, {id: 'a3'}],
