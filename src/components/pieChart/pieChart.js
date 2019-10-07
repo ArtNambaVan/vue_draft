@@ -1,4 +1,127 @@
 import * as d3 from "d3";
+import {birthData} from './data'
+
+export default {
+  props: ["tweetData"],
+  data() {
+    return {
+      sucessColor: '#5CB85C',
+      dangerColor: '#D9534F',
+      colorGray: '#757373',
+
+
+      minYear: birthData[0].year,
+      maxYear: birthData[birthData.length - 1].year,
+
+      width: 1000,
+      height: 200,
+
+      pieWidth: 30,
+      pieHeight: 30,
+
+      dataPie: [
+        { type: 'positive', value: 2502 },
+        { type: 'negative', value: 2005 },
+        { type: 'neutral', value: 1968 },
+      ],
+
+    };
+  },
+  mounted() {
+    var svg = d3.select('#svg-pie');
+    var margin = { top:20, left:30, bottom:30, right:0 };
+    var chartWidth = this.pieWidth;
+    var chartHeight = this.pieHeight;
+
+    this.chartLayer = svg
+      .append('g')
+      // .attr(
+      //   "transform",
+      //   `translate(${margin.left}, ${margin.top})`
+      // );
+  
+    this.arc = d3.arc()
+      .outerRadius(50)
+      .innerRadius(0)
+
+    this.pieG = this.chartLayer
+      .append("g")
+      .attr(
+        "transform",
+        `translate(${chartWidth * 3}, ${chartHeight * 3})`
+      )
+
+      this.drawChart(this.dataPie);
+  },
+  created() {
+
+  },
+  methods: {
+    packChart: function() {
+      console.log(this.minYear, this.maxYear)
+      return 5
+    },
+    drawChart: function(data) {
+      var arcs = d3.pie()
+          .sort(null)
+          .value( d => d.value )
+          (data)
+      var block = this.pieG.selectAll(".arc")
+        .data(arcs)
+      block.select('path').attr('d', this.arc)
+      var newBlock = block
+        .enter()
+        .append("g")
+        .classed("arc", true)
+      newBlock.append("path")
+        .attr("d", this.arc)
+        .attr("id", function(d, i) { return "arc-" + i })
+        .attr("stroke", "gray")
+        .attr("fill", d => {
+          if (d.data.type === 'positive') {
+            return this.sucessColor
+          } else if (d.data.type === 'negative') {
+            return this.dangerColor
+          } else {
+            return this.colorGray
+          }
+        })
+      newBlock.append("text")
+        .attr("dx", 10)
+        .attr("dy", -5)
+        .append("textPath")
+        .attr("xlink:href", function(d, i) { return "#arc-" + i; })
+        .text(function(d) { return d.data.type })
+    }
+  },
+  computed: {
+    output() {
+
+      
+    }
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import * as d3 from "d3";
 
 export default {
   props: ["tweetData"],
@@ -52,3 +175,4 @@ export default {
     }
   }
 };
+*/
