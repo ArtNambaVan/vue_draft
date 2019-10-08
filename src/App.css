@@ -4147,3 +4147,85 @@ a.collapse-icon--left {
   #app {
       padding: 10px 50px;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+.pie-wrapper {
+  overflow-y: auto;
+}
+
+.pie-top {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 100px;
+}
+
+.pie-top p {
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+  margin: 0;
+}
+
+#test {
+  /* display: flex;
+  justify-content: space-around */
+  flex: 1;
+  position: relative;
+}
+
+.pie_row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pie-block {
+  display: flex;
+}
+
+.pie-left {
+  width: 100px;
+}
+
+.pie-left p {
+  padding: 5px;
+  margin: 0;
+  height: 100px;
+  line-height: 100px;
+}
+
+.chart-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  font-size: 14px;
+}
+
+.chart-title__sub {
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+  font-size: 12px;
+}
+
+.tooltip2 {	
+  position: absolute;			
+  text-align: center;			
+  width: 70px;				
+  padding: 5px;				
+  font: 12px sans-serif;		
+  background: lightsteelblue;	
+  border: 0px;		
+  border-radius: 8px;			
+  pointer-events: none;
+}
+
