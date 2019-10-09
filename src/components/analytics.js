@@ -1,6 +1,7 @@
 import CimsDashboard from './cimsDashboard.js';
 import CimsChartTable from './cims-chart-table.vue';
 import CimsChartBubble from './cims-chart-bubble.vue';
+import CimsChartBubble2 from './cims-chart-bubble2.vue';
 import CimsChartColumn from './cims-chart-column.vue';
 import CimsChartType from './cimsChartType.js';
 
@@ -48,7 +49,8 @@ export default {
                         new CimsChartType('WM1', 'Wordmap_1.png', 'Worldmap', CimsChartTable)
                     ],
                     [
-                        new CimsChartType('BB1', 'Bubble_1.png', 'Bubble', CimsChartBubble)
+                        new CimsChartType('BB1', 'Bubble_1.png', 'Bubble', CimsChartBubble),
+                        new CimsChartType('BB2', 'Bubble_1.png', 'Bubble', CimsChartBubble2)
                     ]
                 ]
             }

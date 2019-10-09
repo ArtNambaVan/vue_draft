@@ -4186,6 +4186,8 @@ a.collapse-icon--left {
 .pie_row {
   display: flex;
   justify-content: space-around;
+
+  /*background: linear-gradient(360deg,transparent 40px, #ebebeb 40px 60px, transparent 55px);*/
 }
 
 .pie-block {
@@ -4201,6 +4203,8 @@ a.collapse-icon--left {
   margin: 0;
   height: 100px;
   line-height: 100px;
+  height: 70px;
+  line-height: 70px;
 }
 
 .chart-title {
@@ -4217,15 +4221,37 @@ a.collapse-icon--left {
   font-size: 12px;
 }
 
-.tooltip2 {	
+.pie-tooltip {	
   position: absolute;			
   text-align: center;			
-  width: 70px;				
-  padding: 5px;				
+  width: 90px;				
+  padding: 5px 2px;				
   font: 12px sans-serif;		
   background: lightsteelblue;	
   border: 0px;		
   border-radius: 8px;			
   pointer-events: none;
+  top: 0;
 }
 
+.pie-tooltip--success {
+  border: 2px solid #5CB85C;
+  background-color: #f0f9eb;
+  color: #67C23A;
+}
+
+.pie-tooltip--danger {
+  border: 2px solid #D9534F;
+  background-color: #fef0f0;
+  color: #F56C6C;
+}
+
+.pie-tooltip--default {
+  border: 2px solid #757373;
+  background-color: #f4f4f5;
+  color: #909399;
+}
+
+.donut .pie_row {
+  background: linear-gradient(360deg,transparent 30px, #ebebeb 30px 40px, transparent 40px);
+}

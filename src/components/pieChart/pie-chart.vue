@@ -1,4 +1,4 @@
-<script src="./pieChart4.js"></script>
+<script src="./pieChart6.js"></script>
 
 <template>
   <div class="pie-wrapper">

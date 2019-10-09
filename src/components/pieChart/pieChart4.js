@@ -218,9 +218,6 @@ export default {
         .attr("d", d3.arc()
         .innerRadius(0)
         .outerRadius(d => {
-            console.log(d.data.pieSize);
-            
-            var r = 25;
             return d.data.pieSize
         }))
         .style("fill", d => {
@@ -233,12 +230,11 @@ export default {
         } else {
             return this.colorGray
         }
-        return 'green'
         });
     })
 
     var div = d3.select("#test").append("div")	
-    .attr("class", "tooltip2")				
+    .attr("class", "pie-tooltip")				
     .style("opacity", 0);
 
   },
